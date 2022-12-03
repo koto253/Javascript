@@ -5,7 +5,7 @@ class Node {
   }
 }
 class LinkedList {
-   constructor() {
+   constructor(value) {
       let newNode = new Node(value)
       this.head = newNode
       this.tail = newNode
@@ -29,7 +29,7 @@ class LinkedList {
 
    // add pop method 
    pop() {
-      if(!this.head) return "it's empty" 
+      if(!this.head) return undefined 
       // declare 2 variable to keep track the linkedlist
       let temp = this.head
       let pre = this.head
@@ -50,6 +50,8 @@ class LinkedList {
 }
 
 let newLinkedList = new LinkedList(4)
+
+
 
 
 
