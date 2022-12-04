@@ -51,6 +51,7 @@ class LinkedList {
    //add new value at the beginnig of the linked list
    unshift(value) {
       let newNode = new Node(value)
+      
       if(!this.head){
          this.head = newNode
          this.tail = newNode
@@ -91,9 +92,27 @@ class LinkedList {
       this.length++
       return true
    }
+
+   //add remove method
+   remove(index) {
+      if(index === 0) return this.shift()
+      if(index === this.length - 1) return this.pop()
+      if(index < 0 || index >= this.length) return `error`
+
+      let pre = index - 1
+      let temp = pre.next
+
+      pre.next = temp.next
+      temp.next = null
+      this.length--
+      return temp
+   }
 }
 
-let newLinkedList = new LinkedList(4)
+let newLinkedList = new LinkedList(11)
+newLinkedList.push(3)
+newLinkedList.push(23)
+newLinkedList.push(7)
 
 
 
