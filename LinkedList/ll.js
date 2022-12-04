@@ -51,7 +51,7 @@ class LinkedList {
    //add new value at the beginnig of the linked list
    unshift(value) {
       let newNode = new Node(value)
-      
+
       if(!this.head){
          this.head = newNode
          this.tail = newNode
@@ -107,12 +107,31 @@ class LinkedList {
       this.length--
       return temp
    }
+
+   // add reverse method 
+   reverse() {
+      let temp = this.head
+      this.head = this.tail
+      this.tail = temp
+
+      let prev = null
+      let next = temp.next 
+
+      for(let i = 0; i < this.length; i++) {
+         next = temp.next
+         temp.next = prev
+         prev = temp
+         temp = next
+      }
+      return this
+
+   }
 }
 
-let newLinkedList = new LinkedList(11)
+let newLinkedList = new LinkedList(1)
+newLinkedList.push(2)
 newLinkedList.push(3)
-newLinkedList.push(23)
-newLinkedList.push(7)
+newLinkedList.push(4)
 
 
 
