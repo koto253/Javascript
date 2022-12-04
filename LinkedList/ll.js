@@ -76,6 +76,21 @@ class LinkedList {
       temp.next = null
       return temp
    }
+
+   // insert items using insert method
+   insert(index, value) {
+      let newNode = new Node(value)
+
+      if(index === 0) return this.unshift(value)
+      if(this.length === index) return this.push(value)
+      if(index < 0 || index > this.length) return 'error'
+
+      let temp = index - 1
+      newNode.next = temp.next
+      temp.next = newNode
+      this.length++
+      return true
+   }
 }
 
 let newLinkedList = new LinkedList(4)
