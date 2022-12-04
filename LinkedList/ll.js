@@ -62,6 +62,20 @@ class LinkedList {
       this.length++
       return this
    }
+
+   // removes the first item of a linkedlist
+   shift() {
+      if(!this.head) return "it's empty!!"
+      let temp = this.head
+      this.head = this.head.next
+      this.length--
+      if(this.length === 0) {
+         this.head = null 
+         this.tail = null
+      }
+      temp.next = null
+      return temp
+   }
 }
 
 let newLinkedList = new LinkedList(4)
