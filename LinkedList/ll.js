@@ -29,7 +29,7 @@ class LinkedList {
 
    // add pop method 
    pop() {
-      if(!this.head) return undefined 
+      if(!this.head) return "it's empty" 
       // declare 2 variable to keep track the linkedlist
       let temp = this.head
       let pre = this.head
@@ -46,6 +46,21 @@ class LinkedList {
          this.tail = null
       }
       return temp
+   }
+
+   //add new value at the beginnig of the linked list
+   unshift(value) {
+      let newNode = new Node(value)
+      if(!this.head){
+         this.head = newNode
+         this.tail = newNode
+      }
+      else {
+         newNode.next = this.head
+         this.head = newNode
+      }
+      this.length++
+      return this
    }
 }
 
