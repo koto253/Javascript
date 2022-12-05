@@ -33,9 +33,9 @@ class DoublyLinkedList {
 
    // add pop method 
    pop() {
-      if(this.length === 0) return `it's empty`
+      if(this.length === 0) return undefined
       let temp = this.tail
-      if(this.length === 0) {
+      if(this.length === 1) {
          this.head = null
          this.tail = null
       }
@@ -51,3 +51,5 @@ class DoublyLinkedList {
 }
 
 let newDoublyLinkedList = new DoublyLinkedList(7)
+newDoublyLinkedList.push(3)
+
