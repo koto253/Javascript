@@ -78,6 +78,17 @@ class LinkedList {
       return temp
    }
 
+   // add get method 
+   get(index) {
+      if(index < 0 || index > this.length) return undefined
+
+      let temp = this.head
+      for(let i = 0; i < this.length; i++){
+         temp = temp.next
+      }
+      return temp
+   }
+
    // insert items using insert method
    insert(index, value) {
       let newNode = new Node(value)
