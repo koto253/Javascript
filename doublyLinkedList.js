@@ -84,7 +84,7 @@ class DoublyLinkedList {
 
    // add get method 
    get(index) {
-      if(index < 0 || index > this.length) return undefined
+      if(index < 0 || index >= this.length) return undefined
 
       let temp = this.head
 
@@ -117,7 +117,7 @@ class DoublyLinkedList {
    insert(index, value) {
       if(index === 0) return this.unshift(value)
       if(this.length === index) return this.push(value)
-      if(index < 0 || index > this.length) return 'error'
+      if(index < 0 || index >= this.length) return 'error'
 
       let newNode = new Node(value)
       let before = this.get(index -1)
@@ -128,6 +128,22 @@ class DoublyLinkedList {
       newNode.prev = before
       this.length++
       return true
+   }
+
+   // add remove method
+   remove(index) {
+      if(index === 0) return this.shift()
+      if(index === this.length -1) return this.pop()
+      if(index < 0 || index >= this.length) return 'error'
+
+      let temp = this.get(index)
+      temp.prev.next = temp.next
+      temp.next.prev = temp.prev
+      temp.next = null
+      temp.prev = null
+
+      this.length--
+      return temp
    }
           
 }
