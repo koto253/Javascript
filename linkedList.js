@@ -91,15 +91,15 @@ class LinkedList {
 
    // insert items using insert method
    insert(index, value) {
-      let newNode = new Node(value)
-
       if(index === 0) return this.unshift(value)
       if(this.length === index) return this.push(value)
       if(index < 0 || index > this.length) return 'error'
 
-      let temp = index - 1
-      newNode.next = temp.next
-      temp.next = newNode
+      let newNode = new Node(value)
+      let before = this.get(index -1)
+      let after = before.next
+      newNode.next = after
+      before.next = newNode
       this.length++
       return true
    }
