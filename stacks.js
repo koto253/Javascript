@@ -28,7 +28,7 @@ class Stacks {
    }
 
    // adding new node to stacks 
-   unshift(value) {
+   push(value) {
       let newNode = new Node(value)
       if(!this.top){
          this.top = newNode
