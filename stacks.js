@@ -27,7 +27,7 @@ class Stacks {
       this.length = 0
    }
 
-   // adding new node to stacks 
+   // add push method 
    push(value) {
       let newNode = new Node(value)
       if(!this.top){
@@ -39,7 +39,19 @@ class Stacks {
       this.length++
       return this
    }
+
+   // add pop method
+   pop() {
+      if(!this.top) return `it's empty`
+
+      let temp = this.top
+      this.top = temp.next
+      temp.next = null
+      
+      this.length--
+      return temp
+   }
 } 
 
 // declare new variable
-let newStack = new Stacks(11)
+let newStack = new Stacks()
