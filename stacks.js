@@ -22,10 +22,22 @@ class Node {
 
 // create Stacks contructor
 class Stacks {
-   constructor(value){
+   constructor(){
+      this.top = null
+      this.length = 0
+   }
+
+   // adding new node to stacks 
+   unshift(value) {
       let newNode = new Node(value)
-      this.top = newNode
-      this.length = 1
+      if(!this.top){
+         this.top = newNode
+      } else {
+         newNode.next = this.top
+         this.top = newNode
+      }
+      this.length++
+      return this
    }
 } 
 
