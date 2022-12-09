@@ -8,11 +8,11 @@ class Node{
 
 // create double linked list constrcutor
 class DoublyLinkedList {
-   constructor(value) {
-      let newNode = new Node(value)
-      this.head = newNode
-      this.tail = newNode
-      this.length = 1
+   constructor() {
+      let newNode = new Node()
+      this.head = null
+      this.tail = null
+      this.length = 0
    }
 
    // add push method 
