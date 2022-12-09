@@ -9,7 +9,6 @@ class Node{
 // create double linked list constrcutor
 class DoublyLinkedList {
    constructor() {
-      let newNode = new Node()
       this.head = null
       this.tail = null
       this.length = 0
