@@ -126,13 +126,21 @@ class LinkedList {
       this.tail = temp
 
       let prev = null
-      let next = temp.next 
+      let next = null 
 
-      for(let i = 0; i < this.length; i++) {
+      // for(let i = 0; i < this.length; i++) {
+      //    next = temp.next
+      //    temp.next = prev
+      //    prev = temp
+      //    temp = next
+      // }
+      // return this
+
+      while(temp) {
          next = temp.next
          temp.next = prev
          prev = temp
-         temp = next
+         temp = next 
       }
       return this
 
