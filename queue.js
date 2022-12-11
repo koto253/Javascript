@@ -8,10 +8,11 @@ class Node {
 
 // create constructor 
 class Queue {
-   constructor(){
-      this.first = null
-      this.last = null
-      this.length = 0
+   constructor(value){
+      let newNode = new Node(value)
+      this.first = newNode
+      this.last = newNode
+      this.length = 1
    }
 
    // add enqueue method
