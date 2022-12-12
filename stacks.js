@@ -22,9 +22,10 @@ class Node {
 
 // create Stacks contructor
 class Stacks {
-   constructor(){
-      this.top = null
-      this.length = 0
+   constructor(value){
+      let newNode = new Node(value)
+      this.top = newNode
+      this.length = 1
    }
 
    // add push method 
@@ -51,7 +52,8 @@ class Stacks {
       this.length--
       return temp
    }
-} 
+}
+
 
 // declare new variable
 let newStack = new Stacks()
