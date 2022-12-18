@@ -6,10 +6,12 @@ multiplied by 2.
 */
 
 function doubler(numbers) {
+   let newArray = [];
    for(let i = 0; i < numbers.length; i++) {
-      numbers[i] *= 2;
+      newArray.push(numbers[i] * 2);
    }
-   return numbers;
+   return newArray;
 }
 
 console.log(doubler([1, 2, 3, 4])); // => [2, 4, 6, 8]
+console.log(doubler([7, 1, 8])); // => [14, 2, 16]
