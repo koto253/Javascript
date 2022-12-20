@@ -12,11 +12,10 @@ function countVowels(word) {
          if(word[i] === 'a' || word[i] === 'e' || word[i] === 'o' || word[i] === 'i' || word[i] === 'u') {
              count += 1;
          }
-         return `No vowel(s) found`
      }
      return count;
    }
    
    console.log(countVowels("bootcamp")); // => 3
    console.log(countVowels("apple")); // => 2
-   console.log(countVowels("pizza")); // => 2
+   console.log(countVowels("ismael bah ")); // => 2
