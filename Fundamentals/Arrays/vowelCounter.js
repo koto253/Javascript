@@ -11,7 +11,8 @@ function countVowels(word) {
      for(let i = 0; i < word.length; i++){
          if(word[i] === 'a' || word[i] === 'e' || word[i] === 'o' || word[i] === 'i' || word[i] === 'u') {
              count += 1;
-         } 
+         }
+         return `No vowel(s) found`
      }
      return count;
    }
