@@ -57,6 +57,15 @@ contains(value){
    return `not found`;
 }
 
+// add minValueNode method
+minValueNode(currentParent){
+   while(currentParent.left){
+      currentParent = currentParent.left
+   }
+
+   return currentParent
+}
+
 }
 
 let newTree = new BST(47)
