@@ -79,14 +79,14 @@ class LinkedList {
 
    // add get method 
    get(index) {
-      if(index < 0 || index > this.length) return undefined
-
-      let temp = this.head
-      for(let i = 0; i < this.length; i++){
-         temp = temp.next
+      if(index < 0 || index >= this.length) return `out of range`;
+      let temp = this.head;
+      for(let i = 0; i < index; i++){
+         temp = temp.next;
       }
-      return temp
+      return temp;
    }
+
 
    // insert items using insert method
    insert(index, value) {
@@ -151,7 +151,7 @@ newLinkedList.push(2)
 newLinkedList.push(3)
 newLinkedList.push(4)
 
-newLinkedList.pop()
+// newLinkedList.pop()
 
 
 
