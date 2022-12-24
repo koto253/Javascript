@@ -60,22 +60,17 @@ contains(value){
 // add minValueNode method
 minValueNode(currentParent){
    while(currentParent.left){
-      currentParent = currentParent.left
+      currentParent = currentParent.left;
    }
 
-   return currentParent
+   return currentParent;
 }
 
 }
 
-let newTree = new BST(47)
+let myBST = new BST(47);
 
-newTree.insert(21);
-newTree.insert(76);
-newTree.insert(18);
-newTree.insert(27);
-newTree.insert(52);
-newTree.insert(82);
+
 
 
 
