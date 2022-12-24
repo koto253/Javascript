@@ -99,17 +99,18 @@ class LinkedList {
 
    // insert items using insert method
    insert(index, value) {
-      if(index === 0) return this.unshift(value)
-      if(this.length === index) return this.push(value)
-      if(index < 0 || index >= this.length) return 'error'
+      if(index === 0) return this.unshift(value);
+      if(index === this.length) return this.push(value);
+      if(index < 0 || index > this.length) return false;
 
-      let newNode = new Node(value)
-      let before = this.get(index -1)
-      let after = before.next
-      newNode.next = after
-      before.next = newNode
-      this.length++
-      return true
+      let newNode = new Node(value);
+      let temp = this.get(index - 1);
+
+      newNode.next = temp.next;
+      temp.next = newNode;
+
+      this.length++;
+      return true; 
    }
 
    //add remove method
