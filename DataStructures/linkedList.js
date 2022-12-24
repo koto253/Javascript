@@ -87,6 +87,15 @@ class LinkedList {
       return temp;
    }
 
+   // add set method
+   set(index, value){
+      let temp = this.get(index);
+      if(temp){
+         temp.value = value;
+         return true;
+      }
+      return false;
+   }
 
    // insert items using insert method
    insert(index, value) {
