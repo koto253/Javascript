@@ -45,6 +45,22 @@ class BinarySearchTree {
       }
       return currentNode;
    }
+
+   // find a node
+   contains(value){
+      if(this.root === null) return `it's empty`;
+      let temp = this.root;
+
+      while(temp){
+         if(value < temp.value){
+            temp = temp.left;
+         } else if(value > temp.value){
+            temp = temp.right;
+         } else {
+            return temp;
+         }
+      }
+   }
 }
 
 
