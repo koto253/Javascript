@@ -19,11 +19,9 @@ class BinarySearchTree {
          this.root = newNode;
          return this;
       }
-
       let temp = this.root;
-      
       while(true){
-         if(newNode.value === temp.value) return undefined;
+         if(newNode.value === temp.value) return `already exist`;
          if(newNode.value < temp.value){
             if(temp.left === null){
                temp.left = newNode;
@@ -32,15 +30,23 @@ class BinarySearchTree {
             temp = temp.left;
          } else {
             if(temp.right === null){
-               temp.right = newNode
+               temp.right = newNode;
                return this;
             }
             temp = temp.right;
          }
-         
       }
    }
+
+   // find min value
+   minValueNode(currentNode){
+      while(currentNode.left !== null){
+         currentNode = currentNode.left;
+      }
+      return currentNode;
+   }
 }
+
 
 let myBST = new BinarySearchTree(47);
 
@@ -50,6 +56,9 @@ myBST.insert(18);
 myBST.insert(27);
 myBST.insert(52);
 myBST.insert(82);
+myBST.insert(1);
+myBST.insert(19);
+
 
 
 
