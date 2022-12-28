@@ -1,4 +1,4 @@
-function mergeSort(arr1, arr2){
+function merge(arr1, arr2){
 
    let newArr = [];
    let i = 0;
@@ -17,14 +17,26 @@ function mergeSort(arr1, arr2){
       newArr.push(arr1[i]);
       i++;
    }
-   while(j < arr1.length) {
-      newArr.push(arr1[j]);
+   while(j < arr2.length) {
+      newArr.push(arr2[j]);
       j++;
    }
-
-
    return newArr;
-
 }
 
-console.log(mergeSort([1,3,7,8], [2,4,5,6]));
+function mergeSort(arr) {
+   if(arr.length === 1) return arr;
+
+   let mid = Math.floor(arr.length / 2);
+   let left = arr.slice(0, mid);
+   let right = arr.slice(mid);
+
+   console.log('mid: ', mid)
+   console.log('left: ', left)
+   console.log('right: ', right)
+
+   return merge(mergeSort(left), mergeSort(right));
+}
+
+console.log(mergeSort([3,6,9, 11, 34, 89, -21]))
+
