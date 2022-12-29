@@ -18,4 +18,15 @@ function pivot(arr, pivotIndex = 0, endIndex = arr.length-1){
 
 }
 
-console.log(pivot([4,6,1,7,3,2,5]));
+function quickSort(arr, left = 0, right = arr.length-1) {
+
+   if(left < right) {
+      let pivotIndex = pivot(arr, left, right);
+      quickSort(arr, left, pivotIndex-1);
+      quickSort(arr, pivotIndex+1, right);
+   }
+
+   return arr;
+}
+
+console.log(quickSort([4,6,1,7,3,2,5]));
