@@ -101,6 +101,18 @@ class BinarySearchTree {
       traverse(this.root);
       return results;
    }
+
+   // InOrder DFS
+   DFSInOrder() {
+      let results = [];
+      function traverse(currentNode) {
+         if(currentNode.left) traverse(currentNode.left);
+         results.push(currentNode.value);
+         if(currentNode.right) traverse(currentNode.right);
+      }
+      traverse(this.root);
+      return results;
+   }
 }
 
 let myBST = new BinarySearchTree();
@@ -116,6 +128,7 @@ myBST.insert(82);
 console.log(myBST.BFS());
 console.log(myBST.DFSPreOrder());
 console.log(myBST.DFSPostOrder());
+console.log(myBST.DFSInOrder());
 
 
 
