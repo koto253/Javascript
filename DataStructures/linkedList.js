@@ -105,13 +105,14 @@ class LinkedList {
       if(index < 0 || index > this.length) return false;
 
       let newNode = new Node(value);
-      let temp = this.get(index - 1);
+      let pre = this.get(index - 1);
+      let temp = pre.next;
 
-      newNode.next = temp.next;
-      temp.next = newNode;
+      newNode.next = temp;
+      pre.next = newNode;
 
       this.length++;
-      return true; 
+      return this; 
    }
 
    //add remove method
@@ -157,7 +158,7 @@ newLinkedList.push(4)
 
 console.log(newLinkedList);
 console.log(newLinkedList.set(1, 1995));
-console.log(newLinkedList);
+console.log(newLinkedList.insert(2, 2023));
 
 
 
