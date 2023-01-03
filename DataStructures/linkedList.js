@@ -89,7 +89,13 @@ class LinkedList {
 
    // add set method
    set(index, value){
-      l
+      let temp;
+      temp = this.get(index);
+      if(temp){
+         temp.value = value;
+         return true;
+      }
+      return false;
    }
 
    // insert items using insert method
@@ -148,6 +154,10 @@ let newLinkedList = new LinkedList(1)
 newLinkedList.push(2)
 newLinkedList.push(3)
 newLinkedList.push(4)
+
+console.log(newLinkedList);
+console.log(newLinkedList.set(1, 1995));
+console.log(newLinkedList);
 
 
 
