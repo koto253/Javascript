@@ -89,12 +89,7 @@ class LinkedList {
 
    // add set method
    set(index, value){
-      let temp = this.get(index);
-      if(temp){
-         temp.value = value;
-         return true;
-      }
-      return false;
+      l
    }
 
    // insert items using insert method
@@ -119,8 +114,8 @@ class LinkedList {
       if(index === this.get(length - 1)) return this.pop()
       if(index < 0 || index >= this.length) return `error`
 
-      let pre = index - 1
-      let temp = pre.next
+      let pre = this.get(index)
+      let temp = pre.next;
 
       pre.next = temp.next
       temp.next = null
@@ -130,28 +125,21 @@ class LinkedList {
 
    // add reverse method 
    reverse() {
-      let temp = this.head
-      this.head = this.tail
-      this.tail = temp
 
-      let prev = null
-      let next = null 
+      let cur = this.head;
+      this.head = this.tail;
+      this.tail = cur;
 
-      // for(let i = 0; i < this.length; i++) {
-      //    next = temp.next
-      //    temp.next = prev
-      //    prev = temp
-      //    temp = next
-      // }
-      // return this
+      let next;
+      let pre = null
 
-      while(temp) {
-         next = temp.next
-         temp.next = prev
-         prev = temp
-         temp = next 
+      while(cur){
+         next = cur.next;
+         cur.next = pre;
+         pre = cur;
+         cur = next; 
       }
-      return this
+      return this;
 
    }
 }
@@ -161,7 +149,7 @@ newLinkedList.push(2)
 newLinkedList.push(3)
 newLinkedList.push(4)
 
-// newLinkedList.pop()
+
 
 
 
